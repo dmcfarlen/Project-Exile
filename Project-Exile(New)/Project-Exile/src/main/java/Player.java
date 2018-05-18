@@ -11,9 +11,6 @@ public class Player
 	public int attack;
 	public double critChance;
 	public double critMult;
-	public boolean completed;
-	@JsonIgnore
-	private Dungeon1 test = new Dungeon1();
 	@JsonIgnore
 	private boolean death;
 	
@@ -63,21 +60,6 @@ public class Player
 		this.critMult = critMult;
 	}
 
-	public void setCompleted(boolean completed)
-	{
-		this.completed = completed;
-	}
-	
-	public void setDungeonCompleted(boolean comp)
-	{
-		test.setCompleted(comp);
-	}
-	
-	public String getDungeonCompleted()
-	{
-		return test.isCompleted();
-	}
-	
 	public void setDeath(boolean death)
 	{
 		this.death = death;

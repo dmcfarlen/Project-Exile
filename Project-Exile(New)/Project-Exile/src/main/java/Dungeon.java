@@ -1,5 +1,6 @@
 
-public interface Dungeon {
+public interface Dungeon 
+{
 	public String nameOfDungeon = "";
 	public int numberOfMinions = 0;
 	public int levelOfDifficulty = 1;
@@ -9,7 +10,7 @@ public interface Dungeon {
 	public boolean completed = false;
 	
 	public void fightMinion(Minion minion);
-	public void playDialogue();
+	public void playDialogue(String txt);
 	public String getLoot();
 	public void playMusic();
 	public void remote();

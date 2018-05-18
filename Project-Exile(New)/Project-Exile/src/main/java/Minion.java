@@ -1,3 +1,4 @@
+
 public class Minion {
 	private String name;
 	private int defense;

@@ -12,6 +12,7 @@ public class Save
 		mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
 		
 		Player player = new Player();
+		Dungeon1 dungeon = new Dungeon1();
 		
 		player.setName("Chance");
 		player.setLevel(1);
@@ -22,8 +23,13 @@ public class Save
 		player.setDefense(0);
 		player.setCritChance(3);
 		player.setCritMult(1.5);
-		player.setCompleted(true);
+		
+		dungeon.setCompleted(false);
 		
 		mapper.writeValue(new File("save.json"), player);
+		
+		mapper.writeValue(new File("dungeon1.json"), dungeon);
+		
+		System.out.println("Game saved successfully");
 	}
 }

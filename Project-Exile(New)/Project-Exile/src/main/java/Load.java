@@ -12,6 +12,7 @@ public class Load
 		ObjectMapper mapper = new ObjectMapper();
 		
 		Player player = mapper.readValue(new File("save.json"), Player.class);
+		Dungeon1 dungeon = mapper.readValue(new File("dungeon1.json"), Dungeon1.class);
 
 		System.out.print("Name: " + player.name + "\n" +
 						 "Level: " + player.level + "\n" +
@@ -21,10 +22,9 @@ public class Load
 						 "Attack: " + player.attack + "\n" +
 						 "Defense: " + player.defense + "\n" +
 						 "Crit Chance: " + player.critChance + "\n" +
-						 "Crit Mult: " + player.critMult + "\n");
+						 "Crit Mult: " + player.critMult + "\n\n");
 		
-		player.setDungeonCompleted(player.completed);
-		
-		System.out.println(player.getDungeonCompleted());
+		System.out.println(dungeon.isCompleted());
+		dungeon.playDialogue("yeet");
 	}
 }

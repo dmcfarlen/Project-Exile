@@ -1,6 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class Dungeon1 implements Dungeon 
+public class Dungeon2 implements Dungeon 
 {
 	@JsonIgnore
 	public String nameOfDungeon;
@@ -16,7 +16,7 @@ public class Dungeon1 implements Dungeon
 	public Minion[] minionList;
 	public boolean completed;
 	
-	public Dungeon1(String n, int num, int lev, String[] loot, Conversation diag, Minion[] minions, boolean comp)
+	public Dungeon2(String n, int num, int lev, String[] loot, Conversation diag, Minion[] minions, boolean comp)
 	{
 		dialogue = new Conversation();
 		nameOfDungeon = n;
@@ -27,6 +27,7 @@ public class Dungeon1 implements Dungeon
 		minionList = minions;
 		completed = comp;
 	}
+	
 	public void fightMinion(Minion minion) 
 	{
 
@@ -61,9 +62,9 @@ public class Dungeon1 implements Dungeon
 	public String isCompleted() 
 	{
 		if(completed)
-			return "Dungeon 1 has been completed";
+			return "Dungeon 2 has been completed";
 		else
-			return "Dungeon 1 has not been completed";
+			return "Dungeon 2 has not been completed";
 	}
 
 }
