@@ -1,24 +1,30 @@
-import java.util.*;
 import java.util.concurrent.TimeUnit;
+import com.almasb.fxgl.app.FXGL;
+
 public class Conversation 
 {
-    Jukebox n = new Jukebox();
+
+    private TimeUnit u = TimeUnit.MILLISECONDS;
+    private long time = 60;
+    //private Jukebox n = new Jukebox();
+    
     public void printTXT(String t)
     {
-        Jukebox n = new Jukebox();
-        TimeUnit u = TimeUnit.MILLISECONDS;
-        long time = 165;
+
+
         for(char ch:t.toCharArray())
         {
-            n.playSound("Boss Minions.wav");
+            FXGL.getAudioPlayer().setGlobalSoundVolume(0.025);
+            FXGL.getAudioPlayer().playSound("text_sound_8.wav");
             System.out.print(ch);
             try
             {
-            u.sleep(time);
+                u.sleep(time);
             }catch(InterruptedException e)
             {
                 e.printStackTrace();
             }
         }
+        System.out.println();
     }
 }
