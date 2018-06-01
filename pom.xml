@@ -3,7 +3,7 @@
   <groupId>maven</groupId>
   <artifactId>Jackson</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>SaveTest</name>
+  <name>ProjectExile</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <source.version>1.8</source.version>
