@@ -57,23 +57,27 @@ public class Minion {
     public String getLoot() 
     {
     	int rand = (int) (Math.random()*100)+1;
+    	int g = (int) (Math.random()*4)+1;
+    	
+    	player.addGold(g);
+    	System.out.println("The monster dropped " + g + " gold!");
     	
     	if(rand <= 30)
     	{
     		player.addEquip(itemLoot);
-    		return "The monster dropped a " + itemLoot.getName();
+    		return "The " + name + " dropped a " + itemLoot.getName();
     	}
     		
     	else if(rand <= 70)
     	{
     		player.addConsume(consumLoot);
-    		return "The monster dropped a " + consumLoot.getName();
+    		return "The " + name + " dropped a " + consumLoot.getName();
     	}
     		
     	else
-    		return "The monster dropped nothing.";
+    		return "The " + name + " dropped nothing.";
     }
-
+    
     public int attack() 
     {
         return getAtk();
@@ -90,10 +94,6 @@ public class Minion {
     }
     public String died() 
     {
-//        if(health <= 0) 
-//        {
-//            return getLoot();
-//        }
         return "dead";
     }
 

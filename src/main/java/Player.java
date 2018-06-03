@@ -12,6 +12,7 @@ public class Player
 	public int defense;
 	public int level;
 	public int attack;
+	public int gold;
 	public double critChance;
 	public double critMult;
 	List<Equipment> equip;
@@ -26,18 +27,19 @@ public class Player
 	{
 		name = n;
 		maxHealth = 15;
-		health = 15;
+		health = 1000000;
 		exp = 0;
 		defense = 0;
 		level = 1;
 		attack = 0;
+		gold = 0;
 		critChance = 3.0;
 		critMult = 1.5;
 		equip = new ArrayList<Equipment>();
 		consume = new ArrayList<Consumeable>();
 	}
 
-	public Player(String n, int mH, int h, int ex, int d, int l, int at, int cC, int cM, ArrayList<Equipment> e, ArrayList<Consumeable> c)
+	public Player(String n, int mH, int h, int ex, int d, int l, int at, int g, int cC, int cM, ArrayList<Equipment> e, ArrayList<Consumeable> c)
 	{
 		name = n;
 		maxHealth = mH;
@@ -46,6 +48,7 @@ public class Player
 		defense = d;
 		level = l;
 		attack = at;
+		gold = g;
 		critChance = cC;
 		critMult = cM;
 		equip = e;
@@ -158,6 +161,11 @@ public class Player
 			System.out.println("\n" + (i+1) + ". " + equip.get(i).getName() + ":" + equip.get(i).getAmount());
 		}
 	}
+	
+	public void printGold()
+	{
+		System.out.println("You have " + gold + " gold.");
+	}
 
 	public void addConsume(Consumeable cons)
 	{
@@ -244,5 +252,10 @@ public class Player
 		consume.get(i).reduceAmount();
 		if(consume.get(i).getAmount() <= 0)
 			consume.remove(i);
+	}
+	
+	public void addGold(int g)
+	{
+		gold += g;
 	}
 }
