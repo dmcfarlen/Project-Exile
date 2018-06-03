@@ -13,6 +13,7 @@ public class Player
 	public int level;
 	public int attack;
 	public int gold;
+	public int town;	
 	public double critChance;
 	public double critMult;
 	List<Equipment> equip;
@@ -33,13 +34,14 @@ public class Player
 		level = 1;
 		attack = 0;
 		gold = 0;
+		town = 0;
 		critChance = 3.0;
 		critMult = 1.5;
 		equip = new ArrayList<Equipment>();
 		consume = new ArrayList<Consumeable>();
 	}
 
-	public Player(String n, int mH, int h, int ex, int d, int l, int at, int g, int cC, int cM, ArrayList<Equipment> e, ArrayList<Consumeable> c)
+	public Player(String n, int mH, int h, int ex, int d, int l, int at, int g, int t, int cC, int cM, ArrayList<Equipment> e, ArrayList<Consumeable> c)
 	{
 		name = n;
 		maxHealth = mH;
@@ -49,6 +51,7 @@ public class Player
 		level = l;
 		attack = at;
 		gold = g;
+		town = t;
 		critChance = cC;
 		critMult = cM;
 		equip = e;

@@ -1,7 +1,7 @@
 public class ItemList
 {
-    private static Consumeable startPotion = new Consumeable("Beggar's health potion", "Heals 10 health", 2, 10);
-    private static Equipment startSword = new Equipment("Rusty blade", "Attack 5", "weapon", 1, 5);
+    public static Consumeable startPotion = new Consumeable("Beggar's health potion", "Heals 10 health", 2, 10);
+    public static Equipment startSword = new Equipment("Rusty blade", "Attack 5", "weapon", 1, 5);
     
     public static Consumeable badPotion = new Consumeable("Lesser health potion", "Heals 10 health", 1, 15);
     public static Consumeable potion = new Consumeable("Health potion", "Heals 15 health", 1, 15);
@@ -19,14 +19,4 @@ public class ItemList
     public static Equipment goldArmor = new Equipment("Gold imbued plate armor", "Defense 7", "armor", 1, 7);
     public static Equipment dragonsteelArmor = new Equipment("Dragonsteel plate armor", "Defense 8", "armor", 1, 8);
     public static Equipment satanBlessedArmor = new Equipment("Satan's own blessed plate armor", "Defense 12", "armor", 1, 12);
-    
-    public Consumeable getStartPotion()
-    {
-        return startPotion;
-    }
-    
-    public Equipment getStartSword()
-    {
-        return startSword;
-    }
 }

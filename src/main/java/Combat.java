@@ -62,8 +62,11 @@ public class Combat
         int patk = player.getAtk();
 
         minion.attacked(patk);
-
-        return words.get(0) + ", you did " + (patk - minion.getDefense()) + " damage to " + minion.getName();
+        
+        if(patk - minion.getDefense() < 0)
+        	return words.get(0) + "You did 0 damage to " + minion.getName();
+        else     
+        	return words.get(0) + ", you did " + (patk - minion.getDefense()) + " damage to " + minion.getName();
     }
 
     public String minionAttack()
@@ -77,7 +80,10 @@ public class Combat
         int matk = minion.getAtk();
 
         player.attacked(matk);
-
-        return words.get(0) + "You took " + (matk - player.getDefense()) + " damage";
+        
+        if(matk - player.getDefense() < 0)
+        	return words.get(0) + "You took 0 damage";
+        else
+        	return words.get(0) + "You took " + (matk - player.getDefense()) + " damage";
     }
 }
